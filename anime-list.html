@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #fd7801;
+  padding: 0px 8% 0px;
+  color: #ffffff;
+}
+.header1 {
+  background-color: #b8b8b8;
+  padding: 1px 5%;
+  color: #ffffff;
+}
+
+#navbar0001 {
+  overflow: hidden;
+  background-color: #fd7801;
+}
+
+#navbar0001 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar0001 a:hover {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow:0 4px 40px rgba(0,0,0,0.4);
+}
+
+#navbar0001 a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+<!-------------------table-------------------------->
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 9px 20px 9px 40px;
+  border: 1px solid #ddd;
+  color: #797979;
+  margin-bottom: 12px;
+  align:center;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 55%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  padding: 12px 20px 12px 40px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+  padding: 1px 0px 5px 2%;
+}
+@media screen and (max-width: 999px) {
+  #myTable {
+	width: 100%;
+	}
+}
+@media screen and (max-width: 999px) {
+  #myInput {
+	width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+	<a href="index.html" >
+		<img src="logo.png" alt="" width="160" height="40"></img>
+	</a>
+<!-------------------something--------->
+</div>
+
+<div id="navbar0001">
+  <a href="javascript:void(0)" style="font-size: 28px;padding: 10px 5% 0px 8%;"></a>
+  <a href="index.html">Home</a>
+  <a class="active" href="anime-list.html">Anime List</a>
+  <a href="anime-movie.html">Movies</a>
+</div>
+
+<div class="content">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable" align="center" >
+  <tr class="header1">
+    <td style="width:100%;">A</td>
+  </tr>
+  <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Alfreds Futterkiste</a></td>
+  </tr>
+  <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Alfreds Futterkiste</a></td>
+  </tr>
+   <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Alfreds Futterkiste</a></td>
+  </tr>
+  <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Alfreds Futterkiste</a></td>
+  </tr>
+   <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Alfreds Futterkiste</a></td>
+  </tr>
+   <tr class="header1">
+    <td style="width:100%;">B</td>
+  </tr>
+    <tr>
+    <td><a href="index.html" style="color: #797979; text-decoration: none;" >Blfreds Futterkiste</a></td>
+  </tr>
+  <tr class="header1">
+    <td style="width:100%;">S</td>
+  </tr>
+  <tr>
+    <td><a href="Sword Art Online.html" style="color: #797979; text-decoration: none;" >Sword Art Online</a></td>
+  </tr>
+    <tr>
+    <td><a href="Sword Art Online.html" style="color: #797979; text-decoration: none;" >Tokyo Ghoul</a></td>
+  </tr>
+</table>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar0001 = document.getElementById("navbar0001");
+var sticky = navbar0001.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar0001.classList.add("sticky")
+  } else {
+    navbar0001.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html>
