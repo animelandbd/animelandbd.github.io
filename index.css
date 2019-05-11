@@ -336,8 +336,9 @@ body {
 @media (max-width: 350px) {
 	#rig li {width:100%;}
 }
-
-
+@media (max-width: 800px) {
+	#header {width:100%;}
+}
 
 
 
