@@ -394,14 +394,14 @@ body {
         padding-bottom: 140%;
       }
     }
-    @media only screen and (max-width : 650px) and (min-width : 401px) {
+    @media only screen and (max-width : 999px) and (min-width : 401px) {
       /* Tablet view: 2 tiles */
       .box {
         width: 50%;
         padding-bottom: 70%;
       }
     }
-    @media only screen and (max-width : 1050px) and (min-width : 651px) {
+    @media only screen and (max-width : 1050px) and (min-width : 1000px) {
       /* Small desktop / ipad view: 3 tiles */
       .box {
         width: 33.3%;
